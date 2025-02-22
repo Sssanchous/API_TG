@@ -22,7 +22,7 @@ def download_image(filename, url, folder):
 
 def check_extension(url):
 
-    split_url= urlsplit(url)
+    url_split= urlsplit(url)
 
     url_unquote = unquote(url_split.path)
 
@@ -43,7 +43,6 @@ def fetch_spacex_last_launch(id_last_launch):
     for id, link in enumerate(data, start=1):
         download_image(f"spacex_{id}.jpg", link, images_dir)
 
-# fetch_spacex_last_launch('5eb87d47ffd86e000604b38a')
 
 def fetch_nasa_photo(count):
 
@@ -97,5 +96,3 @@ def fetch_earth_image(count):
 
         download_image(f"Earth_{year}_{month}_{day}_{image_id + 1}{extension}", earth_url, images_dir)
 
-
-fetch_earth_image(2)
