@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 4. PUBLISH_DELAY_HOURS=<раз в сколько часов отправлять фото>
 
-## Пример использования:
+## Cкрипты:
 1. ### fetch_earth_image.py
 Скрипт скачивает фотографии земли с космоса. Нужно указать количество фото. 
 ```
@@ -43,3 +43,12 @@ fetch_spacex_images.py <id>
 
 5. ### telebot.py
 ### Запускает бота
+
+## Пример работы проекта
+1. Скачиваем 5 фото
+```
+python fetch_nasa_photo.py 5
+```
+2. Публикуем изображение в Telegram (каждые 4 часа по умолчанию)
+```
+python telebot.py
