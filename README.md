@@ -44,15 +44,4 @@ fetch_spacex_images.py <id>
 5. ### telebot.py
 Запускает бота
 
-## Пример работы проекта ##
 
-1. Скачиваем 5 фото
-
-```
-python fetch_nasa_photo.py 5
-```
-
-2. Публикуем изображение в Telegram (каждые 4 часа по умолчанию)
-```
-python telebot.py
-```
