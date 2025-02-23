@@ -21,7 +21,7 @@ def takeFiles():
 
 
 def publish_images():
-    delay = int(os.getenv('PUBLISH_DELAY_HOURS')) 
+    delay = int(os.getenv('PUBLISH_DELAY_HOURS')) * 3600
     while True:
         files = takeFiles()
 
