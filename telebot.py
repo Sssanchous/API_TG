@@ -10,5 +10,4 @@ api_bot = os.environ['API_TELEBOT']
 
 bot = telegram.Bot(token=api_bot)
 
-
-print(bot.get_me())
+bot.send_message(chat_id='@imagensa', text="test")
