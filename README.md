@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 2. API_EARTH=<API_TOKEN> [https://api.nasa.gov/#epic]
 
-3. API_TELEBOT=<API_TOKEN> [(https://telegram.me/BotFather)]
+3. API_TELEBOT=<API_TOKEN> [https://telegram.me/BotFather]
 
 4. PUBLISH_DELAY_HOURS=<раз в сколько часов отправлять фото>
 
