@@ -11,11 +11,11 @@ pip install -r requirements.txt
 ```
 
 ## Установка зависимостей
-1. API_NASA=<TOKEN>
+1. API_NASA=<API_TOKEN>
 
-2. API_EARTH=<TOKEN>
+2. API_EARTH=<API_TOKEN>
 
-3. API_TELEBOT=<TOKEN>
+3. API_TELEBOT=<API_TOKEN>
 
 4. PUBLISH_DELAY_HOURS=<раз в сколько часов отправлять фото>
 
