@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 ## Установка зависимостей
-1. API_NASA=<API_TOKEN>
+1. API_NASA=<API_TOKEN>[https://api.nasa.gov/]
 
 2. API_EARTH=<API_TOKEN>
 
