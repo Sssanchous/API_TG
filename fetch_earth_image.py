@@ -7,7 +7,6 @@ from utils import download_image, check_extension
 API_NASA = os.getenv("API_NASA")
 IMAGES_DIR = os.path.join(os.getcwd(), "images")
 
-load_dotenv()
 os.makedirs(IMAGES_DIR, exist_ok=True)
 
 def fetch_earth_image(count):
@@ -40,6 +39,8 @@ def fetch_earth_image(count):
 
 
 def main():
+
+    load_dotenv()
     parser = argparse.ArgumentParser(description="Скачивание изображений Земли от NASA")
     parser.add_argument("count", type=int, help="Количество изображений для скачивания", default=1)
 
