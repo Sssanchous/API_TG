@@ -14,13 +14,12 @@ def download_image(filename, url, folder):
         file.write(response.content)
 
 
-def check_extension(url):
+def get_extension(url):
 
-    url_split= urlsplit(url)
+    url_split = urlsplit(url)
 
     url_unquote = unquote(url_split.path)
 
     filename, extension = os.path.splitext(url_unquote.strip())
 
     return extension
-
