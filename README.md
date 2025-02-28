@@ -43,6 +43,9 @@ fetch_spacex_images.py <id>
 
 5. ### telebot.py
 Запускает бота
+```
+python telebot.py <chat_id>
+```
 ## Пример работы проекта ##
 
 1. Скачиваем 5 фото
