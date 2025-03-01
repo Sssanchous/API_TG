@@ -6,7 +6,6 @@ from urllib.parse import urlsplit, unquote
 def download_image(filename, url, folder):
 
     file_path = os.path.join(folder, filename)
-
     response = requests.get(url)
     response.raise_for_status()
 
@@ -17,9 +16,7 @@ def download_image(filename, url, folder):
 def get_extension(url):
 
     url_split = urlsplit(url)
-
     url_unquote = unquote(url_split.path)
-
     filename, extension = os.path.splitext(url_unquote.strip())
 
     return extension
