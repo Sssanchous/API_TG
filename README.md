@@ -10,7 +10,9 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
-## Установка зависимостей
+## Установка переменных окружения 
+Создайте файл secrets.env в корневой директории проекта и добавьте в него следущие переменные:
+
 1. API_NASA=<API_TOKEN> [https://api.nasa.gov/]
 
 2. API_EARTH=<API_TOKEN> [https://api.nasa.gov/#epic]
@@ -18,6 +20,8 @@ pip install -r requirements.txt
 3. API_TELEBOT=<API_TOKEN> [https://telegram.me/BotFather]
 
 4. PUBLISH_DELAY_HOURS=<раз в сколько часов отправлять фото>
+
+5. CHAT_ID = <ID_CHAT> - получите id чата telegram
 
 ## Cкрипты:
 1. ### fetch_earth_image.py
@@ -43,9 +47,6 @@ fetch_spacex_images.py <id>
 
 5. ### telebot.py
 Запускает бота
-```
-python telebot.py <chat_id>
-```
 ## Пример работы проекта ##
 
 1. Скачиваем 5 фото
