@@ -6,7 +6,7 @@ import time
 import argparse
 
 
-def takefiles():
+def collect_image_files():
     files = []
     for root, dirs, files in os.walk('images'):
         files.extend(files)
@@ -16,7 +16,7 @@ def takefiles():
 def publish_images(chat_id):
     delay = int(os.getenv('PUBLISH_DELAY_HOURS')) * 3600
     while True:
-        files = takefiles()
+        files = collect_image_files()
 
         random.shuffle(files)
 
@@ -27,20 +27,18 @@ def publish_images(chat_id):
                     bot.send_photo(chat_id=chat_id, photo=photo)
                 time.sleep(delay)
 
+def publish_delay_hours():
+    delay = int(os.getenv('PUBLISH_DELAY_HOURS'))
+    return delay * 3600
 
 
 if __name__ == '__main__':
 
     dotenv_path = os.path.join('secrets.env')
     load_dotenv(dotenv_path=dotenv_path)
-    api_bot = os.environ['API_TELEBOT']
-    bot = telegram.Bot(token=api_bot)
-    delay = int(os.getenv('PUBLISH_DELAY_HOURS')) * 3600
-
-    parser = argparse.ArgumentParser(description="Публикация изображений в Telegram")
-    parser.add_argument('chat_id')
-    args = parser.parse_args()
-
-    chat_id = args.chat_id
+    api_key_telebot  = os.environ['API_KEY_BOT']
+    bot = telegram.Bot(token=api_key_telebot)
+    publish_delay_hours()
+    chat_id = os.environ.get('CHAT_ID')
 
     publish_images(chat_id)
