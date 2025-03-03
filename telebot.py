@@ -13,8 +13,7 @@ def collect_image_files():
     return files
 
 
-def publish_images(chat_id):
-    delay = int(os.getenv('PUBLISH_DELAY_HOURS')) * 3600
+def publish_images(chat_id, delay_hours):
     while True:
         files = collect_image_files()
 
@@ -25,11 +24,7 @@ def publish_images(chat_id):
             if os.path.exists(file_path):  
                 with open(file_path, 'rb') as photo:
                     bot.send_photo(chat_id=chat_id, photo=photo)
-                time.sleep(delay)
-
-def publish_delay_hours():
-    delay = int(os.getenv('PUBLISH_DELAY_HOURS'))
-    return delay * 3600
+                time.sleep(delay_hours)
 
 
 if __name__ == '__main__':
@@ -38,7 +33,7 @@ if __name__ == '__main__':
     load_dotenv(dotenv_path=dotenv_path)
     api_key_telebot  = os.environ['API_KEY_BOT']
     bot = telegram.Bot(token=api_key_telebot)
-    publish_delay_hours()
-    chat_id = os.environ.get('CHAT_ID')
+    chat_id = os.environ.get('TG_CHAT_ID')
+    delay_hours = int(os.getenv('PUBLISH_DELAY_HOURS', 4)) * 3600
 
-    publish_images(chat_id)
+    publish_images(chat_id, delay_hours)
