@@ -14,12 +14,12 @@ def fetch_spacex_last_launch(id_last_launch):
     image_urls = launches["links"]["flickr"]["original"]
 
     for link_id, link in enumerate(image_urls, start=1):
-        download_image(f"spacex_{id}.jpg", link, IMAGES_DIR)
+        download_image(f"spacex_{id}.jpg", link, images_dir)
 
 
 if __name__ == "__main__":
-    IMAGES_DIR  = os.path.join(os.getcwd(), "images")
-    os.makedirs(IMAGES_DIR, exist_ok=True)
+    images_dir  = os.path.join(os.getcwd(), "images")
+    os.makedirs(images_dir, exist_ok=True)
 
     parser = argparse.ArgumentParser(description="Скачивание фотографий SpaceX")
     parser.add_argument("id_last_launch", help="ID запуска SpaceX (по умолчанию – последний запуск)", nargs="?", default='latest')
