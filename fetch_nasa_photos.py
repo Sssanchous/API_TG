@@ -21,13 +21,13 @@ def fetch_nasa_photos(count):
         if 'url' in photo:
             link = photo['url']
             extension = get_extension(link)
-            download_image(f"Nasa_{photo_id}{extension}", link, IMAGES_DIR)
+            download_image(f"Nasa_{photo_id}{extension}", link, images_dir)
 
 
 if __name__ == "__main__":
-    IMAGES_DIR = os.path.join(os.getcwd(), "images")
-    os.makedirs(IMAGES_DIR, exist_ok=True)
-    
+    images_dir = os.path.join(os.getcwd(), "images")
+    os.makedirs(images_dir, exist_ok=True)
+
     dotenv_path = os.path.join('secrets.env')
     load_dotenv(dotenv_path=dotenv_path)
     api_key = os.environ['API_NASA']
