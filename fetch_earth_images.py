@@ -27,12 +27,12 @@ def fetch_earth_images(count):
         earth_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{image_name}.png?api_key={api_key_earth}'
         extension = get_extension(earth_url)
 
-        download_image(f"Earth_{year}_{month}_{day}_{image_id}{extension}", earth_url, IMAGES_DIR)
+        download_image(f"Earth_{year}_{month}_{day}_{image_id}{extension}", earth_url, images_dir)
 
 
 if __name__ == "__main__":
-    IMAGES_DIR = os.path.join(os.getcwd(), "images")
-    os.makedirs(IMAGES_DIR, exist_ok=True)
+    images_dir = os.path.join(os.getcwd(), "images")
+    os.makedirs(images_dir, exist_ok=True)
 
     dotenv_path = os.path.join('secrets.env')
     load_dotenv(dotenv_path=dotenv_path)
