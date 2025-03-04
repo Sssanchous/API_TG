@@ -3,10 +3,10 @@ import os
 from urllib.parse import urlsplit, unquote
 
 
-def download_image(filename, url, folder):
+def download_image(filename, url, folder, params=None):
 
     file_path = os.path.join(folder, filename)
-    response = requests.get(url)
+    response = requests.get(url, params=params)
     response.raise_for_status()
 
     with open(file_path, 'wb') as file:
