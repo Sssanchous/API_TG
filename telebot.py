@@ -13,7 +13,7 @@ def collect_image_files():
     return files
 
 
-def publish_images(chat_id, delay_hours):
+def publish_images(bot, chat_id, delay_hours):
     while True:
         files = collect_image_files()
 
@@ -36,4 +36,4 @@ if __name__ == '__main__':
     chat_id = os.environ.get('TG_CHAT_ID')
     delay_hours = int(os.getenv('PUBLISH_DELAY_HOURS', 4)) * 3600
 
-    publish_images(chat_id, delay_hours)
+    publish_images(bot, chat_id, delay_hours)
