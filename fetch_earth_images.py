@@ -9,7 +9,7 @@ def fetch_earth_images(count):
 
     payload = {
         "api_key": api_key_earth
-        }
+    }
 
     url = f'https://api.nasa.gov/EPIC/api/natural/images'
     response = requests.get(url, params=payload)
@@ -23,11 +23,10 @@ def fetch_earth_images(count):
         image_name = latest_image['image']
         date_part = date.split()[0].split("-")
         year, month , day = date_part
-
-        earth_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{image_name}.png?api_key={api_key_earth}'
+        earth_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{image_name}.png'
         extension = get_extension(earth_url)
 
-        download_image(f"Earth_{year}_{month}_{day}_{image_id}{extension}", earth_url, images_dir)
+        download_image(f"Earth_{year}_{month}_{day}_{image_id}{extension}", earth_url, images_dir, params=payload)
 
 
 if __name__ == "__main__":
