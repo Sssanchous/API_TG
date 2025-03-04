@@ -6,12 +6,13 @@ from utils import download_image, get_extension
 
 
 def fetch_nasa_photos(count):
-    url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
+
     payload = {
         "api_key": api_key,
         "count": count
     }
 
+    url = f'https://api.nasa.gov/planetary/apod'
     response = requests.get(url, params=payload)
     response.raise_for_status()
 
